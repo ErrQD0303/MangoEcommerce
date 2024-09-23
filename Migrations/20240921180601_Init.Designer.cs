@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240921173130_Init")]
+    [Migration("20240921180601_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -88,6 +88,24 @@ namespace API.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "dc149103-b421-4a8f-81e6-bf4057296cfc",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "f0b26073-1a7c-4e0b-8355-9b1fd4e8bebf",
+                            Email = "datvipcrvn@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "DATVIPCRVN@GMAIL.COM",
+                            NormalizedUserName = "QUOCDATADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBxdITK3246S0MES0o652W9ZxJv/UOqAQDerxISDi5hptMxkr47Rz6hPLaOAxsqjrg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "50191b44-60a2-4ebc-9921-a2a14a8d496e",
+                            TwoFactorEnabled = false,
+                            UserName = "quocdatadmin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -119,13 +137,13 @@ namespace API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7a980563-856a-45bf-95c4-6a987ef38bec",
+                            Id = "182c1a2f-597c-4e5b-981e-8fb2c7e313be",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "2de2bc32-6e4f-4d05-875d-ebd9966417ee",
+                            Id = "648744e1-a8a2-4bae-847b-8bc2a6c1dfd3",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -216,6 +234,13 @@ namespace API.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "dc149103-b421-4a8f-81e6-bf4057296cfc",
+                            RoleId = "182c1a2f-597c-4e5b-981e-8fb2c7e313be"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

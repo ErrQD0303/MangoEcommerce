@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace API.Models
+namespace API.Models.Accounts
 {
     public class AppUser : IdentityUser
     {

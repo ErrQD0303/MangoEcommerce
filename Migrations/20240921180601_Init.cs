@@ -163,9 +163,19 @@ namespace API.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "2de2bc32-6e4f-4d05-875d-ebd9966417ee", null, "User", "USER" },
-                    { "7a980563-856a-45bf-95c4-6a987ef38bec", null, "Admin", "ADMIN" }
+                    { "182c1a2f-597c-4e5b-981e-8fb2c7e313be", null, "Admin", "ADMIN" },
+                    { "648744e1-a8a2-4bae-847b-8bc2a6c1dfd3", null, "User", "USER" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "dc149103-b421-4a8f-81e6-bf4057296cfc", 0, "f0b26073-1a7c-4e0b-8355-9b1fd4e8bebf", "datvipcrvn@gmail.com", true, false, null, "DATVIPCRVN@GMAIL.COM", "QUOCDATADMIN", "AQAAAAIAAYagAAAAEBxdITK3246S0MES0o652W9ZxJv/UOqAQDerxISDi5hptMxkr47Rz6hPLaOAxsqjrg==", null, false, "50191b44-60a2-4ebc-9921-a2a14a8d496e", false, "quocdatadmin" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "182c1a2f-597c-4e5b-981e-8fb2c7e313be", "dc149103-b421-4a8f-81e6-bf4057296cfc" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
